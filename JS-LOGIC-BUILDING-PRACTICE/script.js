@@ -2,7 +2,11 @@
 
 //Array Parctices
 
-// console.log([4] + [5] + [6]);
+// const myArray = [5, 64, 6, 54, "kaif"]
+
+// console.log(myArray);
+
+
 
 //Loop practices
 
@@ -12,8 +16,8 @@
 //     }
 // }
 
-let i = 1
-while (i <= 5) {
-    i++
-}
-console.log(i);
+// let i = 1
+// while (i <= 5) {
+//     i++
+// }
+// console.log(i);
