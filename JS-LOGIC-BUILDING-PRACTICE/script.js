@@ -2,9 +2,12 @@
 
 //Array Parctices
 
-// const myArray = [5, 64, 6, 54, "kaif"]
+const myArray = [5, 64, 6, 54, "kaif"]
 
-// console.log(myArray);
+myArray.pop(2)
+myArray.push(2 ,5, "kaif" , true , 2.5)
+
+console.log(myArray);
 
 
 
