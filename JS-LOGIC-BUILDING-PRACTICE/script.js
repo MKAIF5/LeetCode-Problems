@@ -2,12 +2,12 @@
 
 //Array Parctices
 
-const myArray = [5, 64, 6, 54, "kaif"]
+// const myArray = [5, 64, 6, 54, "kaif"]
 
-myArray.pop(2)
-myArray.push(2 ,5, "kaif" , true , 2.5)
+// myArray.pop(2)
+// myArray.push(2 ,5, "kaif" , true , 2.5)
 
-console.log(myArray);
+// console.log(myArray);
 
 
 
@@ -24,3 +24,16 @@ console.log(myArray);
 //     i++
 // }
 // console.log(i);
+
+// Date and Time Practices
+
+// Write a JavaScript program to display the current day and time in the following format.  
+// Sample Output : Today is : Tuesday.
+// Current time is : 10 PM : 30 : 38
+
+// const now = new Date()
+// const currentDay = now.getDay()
+
+// console.log(currentDay.toPrecision())
+
+// console.log(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
