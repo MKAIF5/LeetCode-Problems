@@ -37,3 +37,25 @@
 // console.log(currentDay.toPrecision())
 
 // console.log(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
+
+// Write a JavaScript program to print the current window contents
+
+// function print(){
+//     console.log(window);
+// }
+
+// print()
+
+const number1 = prompt("Please type some number here");
+
+const firstNumber = parseInt(number1);
+
+
+const number2 = prompt("Please type second number here");
+
+const secondNumber = parseInt(number2);
+const randomNumber = Math.round(Math.random() * (firstNumber + 1)) + firstNumber;
+
+const sentence = " Hi, is your number " + randomNumber + "?";
+
+console.log(sentence)
