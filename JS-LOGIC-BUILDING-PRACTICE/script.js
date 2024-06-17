@@ -59,3 +59,5 @@ const randomNumber = Math.round(Math.random() * (firstNumber + 1)) + firstNumber
 const sentence = " Hi, is your number " + randomNumber + "?";
 
 console.log(sentence)
+
+console.log([] + []);
