@@ -1,4 +1,4 @@
-// console.log("JS LOGIC BUILDING");
+ console.log("JS LOGIC BUILDING");
 
 //Array Parctices
 
