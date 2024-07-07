@@ -1,4 +1,4 @@
- console.log("JS LOGIC BUILDING");
+// console.log("JS LOGIC BUILDING");
 
 //Array Parctices
 
@@ -46,18 +46,27 @@
 
 // print()
 
-const number1 = prompt("Please type some number here");
+// const number1 = prompt("Please type some number here");
 
-const firstNumber = parseInt(number1);
+// const firstNumber = parseInt(number1);
 
 
-const number2 = prompt("Please type second number here");
+// const number2 = prompt("Please type second number here");
 
-const secondNumber = parseInt(number2);
-const randomNumber = Math.round(Math.random() * (firstNumber + 1)) + firstNumber;
+// const secondNumber = parseInt(number2);
+// const randomNumber = Math.round(Math.random() * (firstNumber + 1)) + firstNumber;
 
-const sentence = " Hi, is your number " + randomNumber + "?";
+// const sentence = " Hi, is your number " + randomNumber + "?";
 
-console.log(sentence)
+// console.log(sentence)
 
-console.log([] + []);
+// console.log([] + []);
+
+console.log(3 > 2 > 1); //false
+console.log(3 > 2 >= 1);//true
+why?
+
+function abc(sum1, sum2) {
+    return 2 + 2 / 2 * 4 + 4
+}
+console.log(abc());
