@@ -62,11 +62,24 @@
 
 // console.log([] + []);
 
-console.log(3 > 2 > 1); //false
-console.log(3 > 2 >= 1);//true
-why?
+// console.log(3 > 2 > 1); //false
+// console.log(3 > 2 >= 1);//true
+// why?
 
-function abc(sum1, sum2) {
-    return 2 + 2 / 2 * 4 + 4
+// function abc(sum1, sum2) {
+//     return 2 + 2 / 2 * 4 + 4
+// }
+// console.log(abc());
+
+let num1, num2;
+if(parseInt(num1 ,10) > parseInt(num2 , 10)){
+    console.log(`The larger of ${num1} and ${num2} is ${num1} .`);
 }
-console.log(abc());
+
+else if(parseInt(num2 , 10) > parseInt(num1 , 10)){
+    console.log(`the larger number ${num1} and ${num2} is ${num2}`);
+}
+
+else{
+    console.log(`The value is ${num1} and ${num2} are equal`);
+}
