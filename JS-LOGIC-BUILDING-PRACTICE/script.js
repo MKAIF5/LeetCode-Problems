@@ -71,15 +71,26 @@
 // }
 // console.log(abc());
 
-let num1, num2;
-if(parseInt(num1 ,10) > parseInt(num2 , 10)){
-    console.log(`The larger of ${num1} and ${num2} is ${num1} .`);
-}
+// let num1, num2;
+// if(parseInt(num1 ,10) > parseInt(num2 , 10)){
+//     console.log(`The larger of ${num1} and ${num2} is ${num1} .`);
+// }
 
-else if(parseInt(num2 , 10) > parseInt(num1 , 10)){
-    console.log(`the larger number ${num1} and ${num2} is ${num2}`);
-}
+// else if(parseInt(num2 , 10) > parseInt(num1 , 10)){
+//     console.log(`the larger number ${num1} and ${num2} is ${num2}`);
+// }
 
-else{
-    console.log(`The value is ${num1} and ${num2} are equal`);
+// else{
+//     console.log(`The value is ${num1} and ${num2} are equal`);
+// }
+
+const user = {
+    username: "kaif",
+    age: 15,
+    isLoggin: true,
+    getUserDetails: function(){
+        //  console.log(`USERNAME: ${this.username}`);
+        console.log(this);
+    }   
 }
+console.log(user.getUserDetails())
