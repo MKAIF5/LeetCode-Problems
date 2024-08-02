@@ -84,13 +84,27 @@
 //     console.log(`The value is ${num1} and ${num2} are equal`);
 // }
 
+// object literals
 const user = {
     username: "kaif",
     age: 15,
     isLoggin: true,
-    getUserDetails: function(){
+    getUserDetails: function () {
         //  console.log(`USERNAME: ${this.username}`);
         console.log(this);
-    }   
+    }
 }
 console.log(user.getUserDetails())
+
+// describe new keyword
+
+function users(username, age, isLoggin) {
+    this.username = username
+    this.age = age
+    this.isLoggin = isLoggin
+    return this
+}
+
+const userOne = new users("kaif", 15, true);
+const usertwo = new users("chai", 19, false);
+console.log(userOne);
