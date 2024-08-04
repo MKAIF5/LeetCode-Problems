@@ -1,6 +1,6 @@
 // Median of Two Sorted Arrays
 
-const findMedianSortedArrays = function(nums1, nums2) {
+const findMedianSortedArrays = function (nums1, nums2) {
     // Concatenate the two arrays into a single array `arr`
     let arr = nums1.concat(nums2);
     // Sort the combined array in ascending order
@@ -8,7 +8,7 @@ const findMedianSortedArrays = function(nums1, nums2) {
 
     // Get the length of the combined and sorted array
     let n = arr.length;
-    
+
     // Check if the length of the array is even
     if (n % 2 === 0) {
         // If even, calculate the median as the average of the two middle numbers
@@ -18,11 +18,11 @@ const findMedianSortedArrays = function(nums1, nums2) {
         return arr[Math.floor(n / 2)];
     }
 };
-console.log(findMedianSortedArrays([1,3], [2]));
+console.log(findMedianSortedArrays([1, 3], [2]));
 
 // Merge k Sorted Lists
 
-const mergeKLists = function(lists) {
+const mergeKLists = function (lists) {
     if (lists.length === 0) {
         return null;
     }
@@ -83,3 +83,27 @@ function mergeTwoLists(list1, list2) {
     // Return the merged list starting from the node after the dummy
     return dummy.next;
 };
+
+// Trapping Rain Water
+
+let trap = function (height) {
+    let left = 0;
+    let right = height.length - 1;
+    let lmax = height[left];
+    let rmax = height[right];
+    let ans = 0;
+
+    while (left < right) {
+        if (height[left] < height[right]) {
+            lmax = Math.max(lmax, height[left]);  // Update lmax
+            ans += lmax - height[left];           // Calculate trapped water at left position
+            left++;                               // Move the left pointer rightward
+        } else {
+            rmax = Math.max(rmax, height[right]); // Update rmax
+            ans += rmax - height[right];          // Calculate trapped water at right position
+            right--;                              // Move the right pointer leftward
+        }
+    }
+    return ans;
+};
+console.log(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
