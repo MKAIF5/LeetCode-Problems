@@ -131,19 +131,75 @@ const solveNQueens = function (n) {
 
 
     const solve = (row) => {
-       if(row === n){
-        result.push(board.map(row => row.join('')));
-        return;
-       }
-
-       for(let columns  = 0; columns < n; columns++){
-        if(isValid(row , columns)){
-           board[row][columns] = "Q"
-          solve(row + 1);
-          board[row][columns] = "."
+        if (row === n) {
+            result.push(board.map(row => row.join('')));
+            return;
         }
-       }
+
+        for (let columns = 0; columns < n; columns++) {
+            if (isValid(row, columns)) {
+                board[row][columns] = "Q"
+                solve(row + 1);
+                board[row][columns] = "."
+            }
+        }
     }
     solve(0)
     return result
 };
+
+// Activity 5 : Word Ladder
+
+// Task 5 : Solve the "Word Ladder" problem in LeetCode.
+// Write a function that takes a begin word, an end word, and a dictionary of words,
+// and finds the length of the shortest transformation sequence from the begin word to
+// the end word, such that only one letter can be changed at a time and each transformed
+// word must exist in the word list. • Log the length of the shortest transformation
+// sequence for a few test cases.
+function ladderLength(beginWord, endWord, wordList) {
+    const wordSet = new Set(wordList);
+    if (!wordSet.has(endWord)) return 0;
+  
+    const queue = [[beginWord, 1]]; // [currentWord, currentLength]
+    const visited = new Set();
+    visited.add(beginWord);
+  
+    while (queue.length > 0) {
+      const [currentWord, currentLength] = queue.shift();
+  
+      if (currentWord === endWord) {
+        return currentLength;
+      }
+  
+      for (let i = 0; i < currentWord.length; i++) {
+        const originalChar = currentWord[i];
+        for (let charCode = 97; charCode <= 122; charCode++) {
+          // 'a' to 'z'
+          const newChar = String.fromCharCode(charCode);
+          if (newChar === originalChar) continue;
+  
+          const newWord =
+            currentWord.substring(0, i) + newChar + currentWord.substring(i + 1);
+  
+          if (wordSet.has(newWord) && !visited.has(newWord)) {
+            visited.add(newWord);
+            queue.push([newWord, currentLength + 1]);
+          }
+        }
+      }
+    }
+  
+    return 0;
+  }
+  
+  // Example usage:
+  console.log("Shortest transformation length from 'hit' to 'cog':");
+  const length1 = ladderLength("hit", "cog", [
+    "hot",
+    "dot",
+    "dog",
+    "cog",
+    "lot",
+    "log",
+  ]);
+  console.log(length1); // Should print 5
