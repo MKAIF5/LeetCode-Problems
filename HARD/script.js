@@ -107,3 +107,43 @@ let trap = function (height) {
     return ans;
 };
 console.log(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
+
+// N-queens
+const solveNQueens = function (n) {
+    const result = [];
+    const board = Array(n).fill().map(() => Array(n).fill("."));
+
+    const isValid = (row, columns) => {
+        for (let i = 0; i < row; i++) {
+            if (board[i][columns] === "Q") {
+                return false
+            };
+            if (columns - (row - i) >= 0 && board[i][columns - (row - i)] === "Q") {
+                return false
+            }
+            if (columns + (row - i) < n && board[i][columns + (row - i)] === 'Q') {
+
+                return false;
+            }
+        }
+        return true;
+    };
+
+
+    const solve = (row) => {
+       if(row === n){
+        result.push(board.map(row => row.join('')));
+        return;
+       }
+
+       for(let columns  = 0; columns < n; columns++){
+        if(isValid(row , columns)){
+           board[row][columns] = "Q"
+          solve(row + 1);
+          board[row][columns] = "."
+        }
+       }
+    }
+    solve(0)
+    return result
+};
