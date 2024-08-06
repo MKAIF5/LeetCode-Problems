@@ -148,14 +148,7 @@ const solveNQueens = function (n) {
     return result
 };
 
-// Activity 5 : Word Ladder
-
-// Task 5 : Solve the "Word Ladder" problem in LeetCode.
-// Write a function that takes a begin word, an end word, and a dictionary of words,
-// and finds the length of the shortest transformation sequence from the begin word to
-// the end word, such that only one letter can be changed at a time and each transformed
-// word must exist in the word list. • Log the length of the shortest transformation
-// sequence for a few test cases.
+// Word Ladder
 function ladderLength(beginWord, endWord, wordList) {
     const wordSet = new Set(wordList);
     if (!wordSet.has(endWord)) return 0;
@@ -203,5 +196,3 @@ const length1 = ladderLength("hit", "cog", [
     "log",
 ]);
 console.log(length1); // Should print 5
-
-// Tasks Completed
