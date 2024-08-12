@@ -140,3 +140,14 @@ const isAnagram = function(s, t) {
     }
     return true
 }
+
+// Solved : Counter
+
+const createCounters = (n) =>{
+     
+    let counter = -1
+    return () =>{
+      counter++
+      return n + counter
+    }
+}
