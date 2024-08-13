@@ -89,10 +89,10 @@ const longestCommonPrefix = function (strs) {
         return "";
     }
 
-    let prefix  = strs[0];
+    let prefix = strs[0];
 
-    for(let i = 1; i< strs.length; i++){
-        while(strs[i].indexOf(prefix) != 0){
+    for (let i = 1; i < strs.length; i++) {
+        while (strs[i].indexOf(prefix) != 0) {
             prefix = prefix.substring(0, prefix.length - 1)
         }
     }
@@ -101,54 +101,54 @@ const longestCommonPrefix = function (strs) {
 
 // Solved :  remove duplicates from sorted array 
 
-const removeDuplicates = function(nums) {
-   let index = 1;
-   for(let i = 0; i < nums.length - 1; i++ ){
-    if(nums[i] !== nums[i + 1]){
-        nums[index] = nums[i + 1]
+const removeDuplicates = function (nums) {
+    let index = 1;
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] !== nums[i + 1]) {
+            nums[index] = nums[i + 1]
+        }
     }
-   } 
-   return index    
+    return index
 };
 
 // Solved : Valid Anagram
 
-const isAnagram = function(s, t) {
-    if(s.length !== t.length){
+const isAnagram = function (s, t) {
+    if (s.length !== t.length) {
         return false
-    }  
+    }
     let map = {};
 
-    for(let i = 0; i < s.length; i++){
-        let letter  = s[i];
-        if(!map[letter]){
+    for (let i = 0; i < s.length; i++) {
+        let letter = s[i];
+        if (!map[letter]) {
             map[letter] = 1
-        }else{
+        } else {
             map[letter]++
         }
     }
 
-    for(let i = 0; i < t.length; i++){
-        let letter  = t[i];
-            if(map[letter] === undefined){
-                return false
-            }
-            if(map[letter] < 1){
-                return false
-            }
-            map[letter]--
+    for (let i = 0; i < t.length; i++) {
+        let letter = t[i];
+        if (map[letter] === undefined) {
+            return false
+        }
+        if (map[letter] < 1) {
+            return false
+        }
+        map[letter]--
     }
     return true
 }
 
 // Solved : Counter
 
-const createCounters = (n) =>{
+const createCounters = (n) => {
 
     let counter = -1
-    return () =>{
-      counter++
-      return n + counter
+    return () => {
+        counter++
+        return n + counter
     }
 }
 
@@ -156,13 +156,13 @@ const createCounters = (n) =>{
 
 const plusOne = function (digits) {
 
-    for (let i = digits.length - 1; i >= 0; i--){
-        if(digits[i] < 9){
+    for (let i = digits.length - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
             digits[i] = digits[i] + 1
             return digits
         }
 
-        else{
+        else {
             digits[i] = 0
         }
     }
@@ -172,3 +172,19 @@ const plusOne = function (digits) {
 };
 
 console.log(plusOne(5));
+
+// Solved : Single Number
+
+const singleNumber = function (nums) {
+    let emptyObject = {};
+
+    for (let i = 0; i < nums.length; i++) {
+        emptyObject[nums] = emptyObject[nums] + 1 || 1
+    }
+
+    for (const key in emptyObject) {
+         if(emptyObject[key] === 1){
+            return key
+         }
+    }
+};
