@@ -225,3 +225,18 @@ console.log(s1); // Output: ["o", "l", "l", "e", "h"]
 let s2 = ["H", "a", "n", "n", "a", "h"];
 reverseString(s2);
 console.log(s2); // Output: ["h", "a", "n", "n", "a", "H"]
+
+// Solved : Is Object Empty
+
+const isEmpty = function (obj) {
+
+    if(Object.keys(obj).length === 0){
+        return true
+    }
+
+    else{
+        return false
+    }
+};
+
+console.log(isEmpty({"x": 5, "y": 42}));
