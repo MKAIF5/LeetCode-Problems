@@ -244,35 +244,61 @@
 
 // Solved : Counter ||
 
-const createCounter = function (init) {
-    let value = init
+// const createCounter = function (init) {
+//     let value = init
 
-    function increment() {
-        value++
-        return value
+//     function increment() {
+//         value++
+//         return value
+//     }
+
+//     function decrement() {
+//         value--
+//         return value
+//     }
+
+//     function reset() {
+//         value = init
+//         return value
+//     }
+
+//    return {
+//     increment,
+//     decrement,
+//     reset
+//    }
+// };
+
+// let counter = createCounter(5);
+
+// console.log(counter.increment());
+// console.log(counter.increment());
+// console.log(counter.decrement());
+// console.log(counter.reset());
+// console.log(counter.reset());
+
+// Solved : Find The Index Of The First Occurrence In A String
+
+const strStr = function (haystack, needle) {
+
+
+    if (needle === "") {
+        return 0
     }
 
-    function decrement() {
-        value--
-        return value
+    if (needle.length > haystack.length) {
+        return -1
     }
-
-    function reset() {
-        value = init
-        return value
+    for(let i = 0; i <= haystack.length - needle.length; i++){
+        if(haystack.substring(i , i + needle.length) === needle){
+     
+            return i
+        }
     }
+    return -1
 
-   return {
-    increment,
-    decrement,
-    reset
-   }
 };
 
-let counter = createCounter(5);
-
-console.log(counter.increment());
-console.log(counter.increment());
-console.log(counter.decrement());
-console.log(counter.reset());
-console.log(counter.reset());
+console.log(strStr("sadbutsad", "sad"));
+console.log(strStr("hell0", "ll"));
+console.log(strStr("leetcode", "leeto"));
