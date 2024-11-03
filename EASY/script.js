@@ -230,16 +230,16 @@ console.log(s2); // Output: ["h", "a", "n", "n", "a", "H"]
 
 const isEmpty = function (obj) {
 
-    if(Object.keys(obj).length === 0){
+    if (Object.keys(obj).length === 0) {
         return true
     }
 
-    else{
+    else {
         return false
     }
 };
 
-console.log(isEmpty({"x": 5, "y": 42}));
+console.log(isEmpty({ "x": 5, "y": 42 }));
 
 
 // Solved : Counter ||
@@ -262,11 +262,11 @@ const createCounter = function (init) {
         return value
     }
 
-   return {
-    increment,
-    decrement,
-    reset
-   }
+    return {
+        increment,
+        decrement,
+        reset
+    }
 };
 
 let counter = createCounter(5);
@@ -289,8 +289,8 @@ const strStr = function (haystack, needle) {
     if (needle.length > haystack.length) {
         return -1
     }
-    for(let i = 0; i <= haystack.length - needle.length; i++){
-        if(haystack.substring(i , i + needle.length) === needle){
+    for (let i = 0; i <= haystack.length - needle.length; i++) {
+        if (haystack.substring(i, i + needle.length) === needle) {
             return i
         }
     }
@@ -309,12 +309,12 @@ const majorityElement = (nums) => {
         acc[num] = (acc[num] || 0) + 1;
         return acc;
     }, {});
-    
+
     const majorityCount = Math.floor(nums.length / 2);
     return Object.keys(count).find(key => count[key] > majorityCount);
 };
 
 let arrValues1 = [3, 2, 3];
-let arrValues2 = [2, 2, 1, 1, 1, 2, 2];
-console.log(majorityElement(arrValues1)); 
-console.log(majorityElement(arrValues2)); 
+let arrValues2 = [2, 2, 1, 1, 1, 2, 2]
+console.log(majorityElement(arrValues1));
+console.log(majorityElement(arrValues2));
